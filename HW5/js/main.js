@@ -12,7 +12,6 @@ function formatCurrentDate() {
 }
 
 /* even */
-
 function evenNumbers(arr) {
     const result =  arr.filter(num => num % 2 == 0)
     document.getElementById('even').innerHTML = result;
