@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>JS</title>
 <script src="./js/main.js" defer></script>
 <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
-<body>
+<body onload="formatCurrentDate(), evenNumbers([3, 2, 30, -4, 9, 10, 7, 55, 12])">
 	<main class="flex-box">
 		<div>
-			<div>[3, 2, 30, -4, 9, 10, 7, 55, 12]</div>
-			<div id="sort" style="height: 30px; width: auto;"></div>
+			<span>Even numbers: </span>
+			<span id="even">Even numbers: </span>
+		</div>
+		<div>
+			<span>Current Date: </span>
+			<span id="date"></span>
+		</div>
+		<div>
+			<div class="sort-wrapper">[3, 2, 30, -4, 9, 10, 7, 55, 12]</div>
+			<div id="sort"></div>
 			<button type="button" onclick="printSortedArr([3, 2, 30, -4, 9, 10, 7, 55, 12])">Sort</button>
 		</div>
 		<div>
@@ -24,8 +32,10 @@
 				<p id="result"></p>
 			</div>
 			</form> 
-			<button type="button">Multiply</button>
-			<button type="button">Divide</button>
+			<button type="button" onclick="simpleCalculator.action('multiply')">Multiply</button>
+			<button type="button" onclick="simpleCalculator.action('divide');">Divide</button>
+			<button type="button" onclick="simpleCalculator.action('add');">Add</button>
+			<button type="button" onclick="simpleCalculator.action('subtract');">Subtract</button>
 		</div>
 	</main>
 </body>

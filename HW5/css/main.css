@@ -16,3 +16,11 @@ button, input[type = reset] {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+.sort-wrapper {
+	height: 30px;
+}
+
+main > div {
+	margin-bottom: 30px;
+}
