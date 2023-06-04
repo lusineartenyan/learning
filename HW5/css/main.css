@@ -22,5 +22,7 @@ button, input[type = reset] {
 }
 
 main > div {
+    border-bottom: 1px dotted #bdbdbd;
+    padding: 10px;
 	margin-bottom: 30px;
 }
