@@ -3,15 +3,15 @@ import calculateWinner from '../../controller/calculateWinner';
 import * as constants from '../../data/constants';
 
 export default function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
-    if (calculateWinner(squares) || squares[i]) {
+  function handleClick(i, j) {
+    if (calculateWinner(squares) || squares[i][j]) {
       return;
     }
-    const nextSquares = squares.slice();
+    const nextSquares = JSON.parse(JSON.stringify(squares.slice()));
     if (xIsNext) {
-      nextSquares[i] = 'X';
+      nextSquares[i][j] = 'X';
     } else {
-      nextSquares[i] = 'O';
+      nextSquares[i][j] = 'O';
     }
     onPlay(nextSquares);
   }
@@ -28,19 +28,19 @@ export default function Board({ xIsNext, squares, onPlay }) {
     <>
       <div className="status">{status}</div>
       <div className="board-row">
-        <Button value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Button value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Button value={squares[2]} onSquareClick={() => handleClick(2)} />
+        <Button value={squares[0][0]} onSquareClick={() => handleClick(0, 0)} />
+        <Button value={squares[0][1]} onSquareClick={() => handleClick(0, 1)} />
+        <Button value={squares[0][2]} onSquareClick={() => handleClick(0, 2)} />
       </div>
       <div className="board-row">
-        <Button value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Button value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Button value={squares[5]} onSquareClick={() => handleClick(5)} />
+        <Button value={squares[1][0]} onSquareClick={() => handleClick(1, 0)} />
+        <Button value={squares[1][1]} onSquareClick={() => handleClick(1, 1)} />
+        <Button value={squares[1][2]} onSquareClick={() => handleClick(1, 2)} />
       </div>
       <div className="board-row">
-        <Button value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Button value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Button value={squares[8]} onSquareClick={() => handleClick(8)} />
+        <Button value={squares[2][0]} onSquareClick={() => handleClick(2, 0)} />
+        <Button value={squares[2][1]} onSquareClick={() => handleClick(2, 1)} />
+        <Button value={squares[2][2]} onSquareClick={() => handleClick(2, 2)} />
       </div>
     </>
   );

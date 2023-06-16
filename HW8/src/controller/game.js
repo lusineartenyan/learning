@@ -3,7 +3,7 @@ import Board from "../components/custom/Board";
 import * as constants from '../data/constants';
 
 export default function Game() {
-    const [history, setHistory] = useState([Array(9).fill(null)]);
+    const [history, setHistory] = useState([Array(3).fill(Array(3).fill(null))]);
     const [currentMove, setCurrentMove] = useState(0);
     const xIsNext = currentMove % 2 === 0;
     const currentSquares = history[currentMove];
