@@ -1,0 +1,20 @@
+<html lang="en"> 
+<head>
+    <title>Upload</title>
+    <style>
+        form {
+            width: 250px;
+            margin: 0 auto;
+        }
+        input {
+            margin: 10px;;
+        }
+    </style>
+</head> 
+<body>
+    <form action="http://localhost:8080/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileupload">
+        <input type="submit">
+    </form>
+</body> 
+</html>
