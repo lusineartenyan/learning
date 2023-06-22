@@ -9,7 +9,7 @@ export const lines = [
     [convert2d(2), convert2d(4), convert2d(6)],
 ];
 
-function convert2d(i) {
+function convert2d(i: Number) {
     switch(i) {
         case 0: return [0, 0];
         case 1: return [0, 1];
