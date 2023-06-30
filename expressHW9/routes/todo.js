@@ -14,7 +14,7 @@ router
         console.log("Successfully added todo!");
         res.redirect("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   })
 
   .get("/delete/todo/:_id", (req, res) => {
@@ -24,7 +24,16 @@ router
         console.log("Deleted Todo Successfully!");
         res.redirect("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
+  })
+
+  .get("/deleteAll/todo", (req, res) => {
+    Todo.deleteMany({})
+      .then(() => {
+        console.log("Deleted All Todos!");
+        res.redirect("/");
+      })
+      .catch((err) => console.error(err));
   });
 
 module.exports = router;
