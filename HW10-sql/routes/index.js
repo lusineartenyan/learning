@@ -16,6 +16,15 @@ router.get('/menu-item/most-expensive-price', async function(req, res, next) {
   res.json(result)
 });
 
+router.get('/menu-item/between-prices', async function(req, res, next) {
+  const result = await db.getBetweenPrices();
+  if(result.length !== 0) {
+    res.json(result);
+    return;
+  }
+  console.log('there is no result');
+});
+
 router.post('/menu-item', async function(req, res, next) {
   const result = await db.insertData(req.body);
   req.body.id = result.insertId

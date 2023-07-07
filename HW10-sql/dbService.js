@@ -101,6 +101,25 @@ const db = mysql.createConnection({
           return false;
       }
     }
+
+    async getBetweenPrices() {
+      try {
+          const response = await new Promise((resolve, reject) => {
+              const query = "SELECT * FROM menu_item WHERE price BETWEEN 1 AND 2000";
+
+              db.query(query, (err, result) => {
+                  if (err) reject(new Error(err.message));
+                  resolve(result);
+              })
+          });
+
+          return response;
+      } catch (error) {
+          console.error(error);
+          return false;
+      }
+    }
+
   }
 
   module.exports = DbService;
