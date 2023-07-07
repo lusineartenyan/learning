@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     if(err) {
       console.error(err.message);
     }
-    console.log('db');
+    console.log('db has been connected');
   });
 
   class DbService {
