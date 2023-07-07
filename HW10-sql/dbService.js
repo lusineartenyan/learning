@@ -5,7 +5,7 @@ let instance = null;
 
 const db = mysql.createConnection({
     host: process.env.HOST,
-    user: 'root',
+    user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DATABASE_NAME
   });
