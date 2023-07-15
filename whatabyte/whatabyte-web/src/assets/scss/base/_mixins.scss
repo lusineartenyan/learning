@@ -1,0 +1,70 @@
+@import './variables';
+
+@mixin after($content: '', $pos: absolute) {
+    position: relative;
+
+    &::after {
+        content: $content;
+        position: $pos;
+        @content;
+    }
+}
+
+@mixin hover() {
+    transition: transgorm 350ms ease-in-out;
+    box-shadow: 0 .25em .5em 0 rgba(red, .2);
+
+    @include after() {
+        box-shadow: 0 0 1.25em 0 rgba(red, .4);
+        opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.03);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin flexbox(
+  $display: flex,
+  $direction: row,
+  $placeContent: null,
+  $placeItems: null,
+  $wrap: nowrap,
+  $shrink: 0,
+  $grow: 0,
+  $alignContent: null,
+  $justifyContent: null,
+  $alignItems: null,
+  $justifyItems: null,
+  $gap: null) {
+
+    display: $display;
+    flex-direction: $direction;
+
+    @if $placeContent == null {
+      @if $alignContent   { align-content: $alignContent; }
+      @if $justifyContent { justify-content: $justifyContent; }
+    } @else {
+      place-content: $placeContent;
+    }
+
+    @if $placeItems == null {
+      @if $alignItems   { align-items: $alignItems; }
+      @if $justifyItems { justify-items: $justifyItems; }
+    } @else {
+      place-items: $placeItems;
+    }
+
+    @if $gap {
+        gap: $gap;
+    }
+
+    flex-wrap: $wrap;
+    flex-shrink: $shrink;
+    flex-grow: $grow;
+}
