@@ -1,7 +1,7 @@
 import React from "react";
-import logo from '../assets/images/logo.svg';
 import { NavLink, Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import logo from "../assets/images/logo.svg";
 
 const Layout = () => {
     return (

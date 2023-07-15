@@ -5,7 +5,7 @@ import MENU from "../pages/Menu/Menu";
 import DETAIL from "../pages/Menu/Detail";
 import ADD from "../pages/Menu/Add";
 import EDIT from "../pages/Menu/Edit";
-import DELETE from "../pages/Menu/Delete";
+//import DELETE from "../pages/Menu/Delete";
 import SETTINGS from "../pages/Settings";
 
 export interface routerType {
@@ -28,7 +28,7 @@ const pagesData: routerType = {
         { path: "detail/:id", element: <DETAIL /> },
         { path: "add", element: <ADD /> },
         { path: "edit/:id", element: <EDIT /> },
-        { path: "delete/:id", element: <DELETE /> },
+        // { path: "delete/:id", element: <DELETE /> },
       ],
     },
     { path: "settings", element: <SETTINGS /> },
