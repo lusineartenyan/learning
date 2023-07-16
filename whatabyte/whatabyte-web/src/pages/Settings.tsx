@@ -7,8 +7,8 @@ import Button from "../components/form/Button";
 const Settings = () => {
     const [name, setName] = useState('')
 
-    const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.target.value)
+    const handleNameChange = (name: string, value: string) => {
+        setName(value)
     }
 
     return (

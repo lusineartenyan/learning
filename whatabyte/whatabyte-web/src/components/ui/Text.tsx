@@ -2,7 +2,7 @@ import React from "react";
 
 type TextOwnProps<E extends React.ElementType> = {
     size? : 'sm' | 'md' | 'lg'
-    color?: 'primary' | 'secondary'
+    color?: 'primary' | 'secondary' | 'error'
     children: React.ReactNode
     as?: E
 }
