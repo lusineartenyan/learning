@@ -8,13 +8,19 @@
   }
   &-sm {
     &-primary {
-        font-size: 0.8750em;
-        color: $main-text-color;
+      font-size: 0.875em;
+      color: $main-text-color;
+    }
+  }
+  &-sm {
+    &-error {
+      font-size: 0.875em;
+      color: $error-text-color;
     }
   }
   &-sm {
     &-secondary {
-      font-size: 0.8750em;
+      font-size: 0.875em;
       color: $selected-text-color;
     }
   }

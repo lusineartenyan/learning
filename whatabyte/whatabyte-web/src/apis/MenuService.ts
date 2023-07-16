@@ -1,6 +1,6 @@
 import { items } from "../data/items";
 
-const baseUrl = "http://localhost:3000/";
+const baseUrl = "http://localhost:3000/menu-items";
 
 export class MenuService {
   private static instance: MenuService;
@@ -28,7 +28,7 @@ export class MenuService {
   async getMenuItemDetails(id: Number) {
     let errorMsg = "";
     try {
-      const itemDetails = await fetch(`${baseUrl}menu-item/${id}`);
+      const itemDetails = await fetch(`${baseUrl}/${id}`);
       const itemDetailsJson = await itemDetails.json();
       return itemDetailsJson;
     } catch (error: any) {
@@ -46,7 +46,7 @@ export class MenuService {
     };
     try {
       const itemDetails = await fetch(
-        `${baseUrl}/menu-item/${details.id}`,
+        `${baseUrl}/${details.id}`,
         requestOptions
       );
       const itemDetailsJson = await itemDetails.json();
@@ -65,7 +65,7 @@ export class MenuService {
       body: JSON.stringify(details),
     };
     try {
-      const itemDetails = await fetch(`${baseUrl}menu-item`, requestOptions);
+      const itemDetails = await fetch(`${baseUrl}/`, requestOptions);
       const itemDetailsJson = await itemDetails.json();
       return itemDetailsJson;
     } catch (error: any) {
@@ -80,7 +80,7 @@ export class MenuService {
       method: "DELETE",
     };
     try {
-      await fetch(`${baseUrl}menu-item/${id}`, requestOptions);
+      await fetch(`${baseUrl}/${id}`, requestOptions);
     } catch (error: any) {
       errorMsg = error.message;
       return errorMsg;

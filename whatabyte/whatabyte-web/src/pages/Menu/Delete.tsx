@@ -31,19 +31,22 @@ const Delete = (props: Props) => {
 
   return (
     <div className="flex-box wrapper">
-      <Text as="h1" size="md" color="secondary">
+      <Text size="sm" color="primary" align="center">
         Are you sure you want to delete this item?
       </Text>
-      <Text as="h1" size="sm" color="error">
+      <Text size="sm" color="error" align="center">
         This action can't be undone.
       </Text>
-      <img src={props.image} alt={props.name}></img>
-      <Text as="h1" size="lg" color="secondary">
-        {props.name}
-      </Text>
-      <Text as="h1" size="lg" color="secondary">
-        {props.description}
-      </Text>
+      <div className="center-wrapper">
+        <img src={props.image} alt={props.name}></img>
+        <Text size="sm" color="primary" align="left">
+          {props.name}
+        </Text>
+        <Text size="sm" color="primary" align="left">
+          {props.description}
+        </Text>
+      </div>
+
       <div className="btn-group-vertical">
         <Button onClick={deleteItem}>Delete</Button>
         <Button onClick={ss}>Cancel</Button>

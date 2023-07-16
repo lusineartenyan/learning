@@ -58,7 +58,7 @@ const Detail = () => {
         </span>
       </div>
       {!isDelete && (
-        <div className="detail-wrapper">
+        <div className="center-wrapper">
           <img src={details.image} alt={details.name}></img>
           <Text size="lg" color="primary" align="left">
             {`$${details.price}`}

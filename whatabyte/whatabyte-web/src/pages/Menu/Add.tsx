@@ -20,9 +20,9 @@ const Add: React.FC = () => {
   };
 
   return (
-    <div className="flex-box add">
+    <div className="flex-box wrapper">
       <div className="breadcrumb">
-        <span className="page-heading">Add Menu Items</span>
+        <span className="text-lg-primary">Add Menu Items</span>
         <span className="action-item" onClick={() => actionClick()}>
           Cancel
         </span>

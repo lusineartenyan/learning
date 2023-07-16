@@ -16,12 +16,12 @@ db.connect((err) => {
   console.log("db has been connected");
 });
 
-class DbService {
-  static getDbServiceInstance() {
-    return instance ? instance : new DbService();
+class MenuService {
+  static instance() {
+    return instance ? instance : new MenuService();
   }
 
-  async getAllData(nameLike) {
+  async list(nameLike) {
     try {
       const response = await new Promise((resolve, reject) => {
         const query =
@@ -39,7 +39,7 @@ class DbService {
     }
   }
 
-  async getById(id) {
+  async get(id) {
     try {
       const response = await new Promise((resolve, reject) => {
         const query = `SELECT * FROM menu_item WHERE id = ?`;
@@ -57,24 +57,7 @@ class DbService {
     }
   }
 
-  async getMaxPrice() {
-    try {
-      const response = await new Promise((resolve, reject) => {
-        const query = "SELECT max(price) AS max_price FROM menu_item";
-        db.query(query, (err, result) => {
-          if (err) {
-            reject(new Error(err.message));
-          }
-          resolve(result);
-        });
-      });
-      return response;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  async insertData(menuItem) {
+  async add(menuItem) {
     try {
       const response = await new Promise((resolve, reject) => {
         const query = `INSERT INTO menu_item (
@@ -99,7 +82,7 @@ class DbService {
     }
   }
 
-  async updateData(menuItem) {
+  async update(menuItem) {
     try {
       const response = await new Promise((resolve, reject) => {
         const query = `UPDATE menu_item SET
@@ -129,7 +112,7 @@ class DbService {
     }
   }
 
-  async deleteDataById(id) {
+  async delete(id) {
     try {
       id = parseInt(id, 10);
       const response = await new Promise((resolve, reject) => {
@@ -147,24 +130,6 @@ class DbService {
       return false;
     }
   }
-
-  async getBetweenPrices() {
-    try {
-      const response = await new Promise((resolve, reject) => {
-        const query = "SELECT * FROM menu_item WHERE price BETWEEN 1 AND 2000";
-
-        db.query(query, (err, result) => {
-          if (err) reject(new Error(err.message));
-          resolve(result);
-        });
-      });
-
-      return response;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-  }
 }
 
-module.exports = DbService;
+module.exports = MenuService;
