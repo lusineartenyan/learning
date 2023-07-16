@@ -1,4 +1,11 @@
+@import "../../base/global";
+
 .general-form {
     display: flex;
     flex-direction: column;
+
+    label {
+        font-size: 0.8750em;
+        padding: 5px 0;
+    }
 }

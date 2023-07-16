@@ -4,11 +4,13 @@ import Text from "../components/ui/Text";
 const Home = () => {
   return (
     <div className="grid-box wrapper">
-      <Text as="h1" size="lg" color="secondary">
+      <div className="breadcrumb">
+      <Text size="lg" color="primary" align="left">
         Home
       </Text>
-      <Text size="sm" color="secondary">
-        To start usin the Dashboars, please signin.
+      </div>
+      <Text size="sm" color="primary" align="center">
+        To start using the Dashboars, please signin.
       </Text>
     </div>
   );

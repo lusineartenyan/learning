@@ -50,29 +50,29 @@ const Detail = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex-box wrapper">
       <div className="breadcrumb">
-        <span className="page-heading">{details.name}</span>
+        <span className="text-lg-primary">{details.name}</span>
         <span className="action-item" onClick={() => actionClick(isDelete)}>
           Back
         </span>
       </div>
       {!isDelete && (
-        <>
+        <div className="detail-wrapper">
           <img src={details.image} alt={details.name}></img>
-          <Text as="h1" size="lg" color="secondary">
-            {details.price}
+          <Text size="lg" color="primary" align="left">
+            {`$${details.price}`}
           </Text>
           <Line color="gray"></Line>
-          <Text as="span" size="sm" color="primary">
+          <Text size="sm" color="primary" align="left">
             {details.description}
           </Text>
           <Line color="gray"></Line>
-          <div className="btn-group-vertical">
+          <div className="btn-group-horizontal">
             <Button onClick={itemClick}>Edit</Button>
             <Button onClick={deleteClick}>Delete</Button>
           </div>
-        </>
+        </div>
       )}
       {isDelete && <Delete isDelete={isDelete} {...details} />}
     </div>

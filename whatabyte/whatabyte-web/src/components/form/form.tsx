@@ -1,3 +1,5 @@
+import '../../assets/scss/components/form/form.scss';
+
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 interface FormProps {

@@ -1,12 +1,11 @@
-@import './base/global';
-@import './pages/home.scss';
-@import './pages/menu.scss';
-@import './pages/settings.scss';
-@import './components/form/form.scss';
+@import "./base/global";
+@import "./pages/home.scss";
+@import "./pages/menu.scss";
 
 @font-face {
-  font-family: 'open_sansregular';
-  src: url('../fonts/opensans_regular_macroman/OpenSans-Regular-webfont.woff') format('woff');
+  font-family: "open_sansregular";
+  src: url("../fonts/opensans_regular_macroman/OpenSans-Regular-webfont.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +15,7 @@ html {
 }
 
 body {
-  font-family:'open_sansregular';
+  font-family: "open_sansregular";
   font-size: 1.125rem;
   line-height: 1.6;
   background-color: rgb(215, 114, 26);
@@ -29,8 +28,4 @@ h1 {
 
 main {
   width: 100%;
-}
-
-.breadcrumb {
-  font-size: 16px;
 }

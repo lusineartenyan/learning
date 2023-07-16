@@ -1,4 +1,5 @@
 import React from "react";
+import Text from "../components/ui/Text";
 
 interface ThumbnailProsp {
   id: Number;
@@ -19,8 +20,12 @@ const MenuItemThumbnail = (props: ThumbnailProsp) => {
       }}
     >
       <img src={image} alt={name}></img>
-      <p className="item-name">{name}</p>
-      <p className="itme-desc">{description}</p>
+      <Text size="sm" color="primary" align="center">
+        {name}
+      </Text>
+      <Text size="sm" color="secondary" align="center">
+        {description}
+      </Text>
     </div>
   );
 };

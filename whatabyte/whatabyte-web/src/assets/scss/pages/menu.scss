@@ -1,27 +1,18 @@
+@import "../../scss/base/global";
+
 .thumb {
   text-align: center;
 }
 
 .thumb img {
-  width: 300px;
-  height: auto;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .menu-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  cursor: pointer;
+  padding-left: 20px;
 
-.breadcrumb {
-  padding: 20px;
-  
-    & .page-heading {
-      float: left;
-    }
-
-    & .action-item {
-      float: right;
-    }
+  @include flexbox($wrap: wrap, $gap: 15px);
 }

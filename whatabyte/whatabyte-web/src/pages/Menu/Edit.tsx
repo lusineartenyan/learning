@@ -29,9 +29,9 @@ const Edit: React.FC<Props> = () => {
   }, []);
 
   return (
-    <div className="flex-box edit">
+    <div className="flex-box wrapper">
       <div className="breadcrumb">
-        <span className="page-heading">Edit Menu Items</span>
+        <span className="text-lg-primary">Edit Menu Items</span>
         <span className="action-item" onClick={() => actionClick()}>
           Cancel
         </span>

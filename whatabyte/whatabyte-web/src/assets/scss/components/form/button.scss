@@ -1,22 +1,26 @@
-@import '../../base/global';
+@import "../../base/global";
 
 .btn-group-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 40px 0;
+  @include flexbox($direction: column);
+  margin: 40px 0;
 }
-.btn {
-    border: none;
-    border-radius: 13px;
-    color: white;
-    padding: 8px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    width: 200px;
-    background-color: $btn-primary-color;
 
-    @include hover();
-  }
+.btn-group-horizontal {
+  @include flexbox($justifyContent: center, $gap: 40px);
+  margin: 40px 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 13px;
+  color: white;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  width: 200px;
+  background-color: $btn-primary-color;
+
+  @include hover();
+}
