@@ -1,0 +1,29 @@
+@import "../base/global";
+
+.wrapper {
+  padding: 30px;
+}
+
+.detail-wrapper {
+  width: 40%;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 484px;
+  }
+}
+
+.breadcrumb {
+  cursor: pointer;
+  margin-bottom: 30px;
+
+  @include flexbox($justifyContent: space-between);
+}
+
+.action-item {
+  font-size: 0.875em;
+  text-transform: uppercase;
+}

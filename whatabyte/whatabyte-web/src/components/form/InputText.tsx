@@ -5,9 +5,8 @@ interface InputProps {
   label: string
   value: string | number
   name: string
-  placeholder: string
-  disabled?: boolean
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  placeholder?: string
+  onChange: (name: string, value: string) => void
 }
 
 const Input: FC<InputProps> = ({
@@ -16,9 +15,13 @@ const Input: FC<InputProps> = ({
   value,
   name,
   placeholder,
-  disabled,
   onChange,
 }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    onChange(name, value);
+  };
+
   return (
     <div className="input-wrapper">
       <label htmlFor={label}>{label}</label>
@@ -28,8 +31,7 @@ const Input: FC<InputProps> = ({
         value={value}
         name={name}
         placeholder={placeholder}
-        onChange={onChange}
-        disabled={disabled}
+        onChange={handleChange}
       />
     </div>
   )

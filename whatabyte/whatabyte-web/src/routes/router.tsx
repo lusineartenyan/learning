@@ -2,7 +2,6 @@ import {
   createBrowserRouter,
   Route,
   createRoutesFromElements,
-  RouterProvider,
 } from "react-router-dom";
 import { routerType } from "../routes/pagesData";
 import pagesData from "./pagesData";
@@ -13,7 +12,7 @@ const Routes = () => {
       {pagesData.children?.map(
         ({ path, element, children, index }: routerType, key: number) => {
           return (
-            <Route key={key} path={path != "/" ? path : ""} element={element}>
+            <Route key={key} path={path !== "/" ? path : ""} element={element}>
               {children?.map(
                 (
                   { path, element, children, index }: routerType,
@@ -22,7 +21,7 @@ const Routes = () => {
                   return (
                     <Route
                       key={key}
-                      path={path != "/" ? path : ""}
+                      path={path !== "/" ? path : ""}
                       element={element}
                     >
                       {children?.map(
@@ -33,7 +32,7 @@ const Routes = () => {
                           return (
                             <Route
                               key={key}
-                              path={path != "/" ? path : ""}
+                              path={path !== "/" ? path : ""}
                               element={element}
                             ></Route>
                           );

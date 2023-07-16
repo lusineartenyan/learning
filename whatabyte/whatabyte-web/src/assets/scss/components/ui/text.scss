@@ -1,0 +1,31 @@
+@import "../../base/global";
+
+.text {
+  color: $main-text-color;
+
+  &-center {
+    text-align: center;
+  }
+  &-sm {
+    &-primary {
+        font-size: 0.8750em;
+        color: $main-text-color;
+    }
+  }
+  &-sm {
+    &-secondary {
+      font-size: 0.8750em;
+      color: $selected-text-color;
+    }
+  }
+  &-lg {
+    &-primary {
+      font-size: 2em;
+      color: $main-text-color;
+    }
+  }
+
+  &-error {
+    color: $error-text-color;
+  }
+}

@@ -1,20 +1,20 @@
 
-@use '../base/global';
-@use '../base/mixins';
+@import '../../scss/base/global';
 
 .content {
     width: 100vw;
     height: 100vw;
-    background: global.$main-bg-color;
+    background: $main-bg-color;
+    max-height: 100%;
 
-    @include mixins.flexbox();
+    @include flexbox();
 
     color: white;
 
     .sidebar {
         height: 100%;
-        width: 250px;
-        background-color: global.$sidebar-bg-color;
+        width: 300px;
+        background-color: $sidebar-bg-color;
 
         header {
             text-align: center;
@@ -22,7 +22,7 @@
         }
 
         nav {
-            @include mixins.flexbox($placeContent: center);
+            @include flexbox($placeContent: center);
 
             ul {
                 list-style-type: none;
@@ -30,13 +30,14 @@
                 padding: 0;
         
                 li {
+                    font-size: 0.8750em;
                     width: 100%;
-                    color: global.$main-text-color;
+                    color: $main-text-color;
                     padding-bottom: 20px;
                     list-style-type: none;
                     cursor: pointer;
 
-                    @include mixins.flexbox($justifyContent: left, $alignItems: center, $gap: 15px);
+                    @include flexbox($justifyContent: left, $gap: 15px);
                 }
             }
         }

@@ -7,6 +7,9 @@ type LineProps = {
 const Line = (props: LineProps) => (
     <hr
         style={{
+            opacity:0.5,
+            marginBottom: 20,
+            marginTop: 20,
             border: 0,
             color: props.color,
             backgroundColor: props.color,

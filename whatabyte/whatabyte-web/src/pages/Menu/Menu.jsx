@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItemThumbnail from "../../components/MenuItemThumbnail";
+import Text from "../../components/ui/Text";
 import { MenuService } from "../../apis/MenuService";
 const menuService = MenuService.getInstance();
 
@@ -23,7 +24,9 @@ const Menu = (props) => {
   return (
     <div className="flex-box wrapper">
       <div className="breadcrumb">
-        <span className="page-heading">Menu Items</span>
+        <Text size="lg" color="primary">
+          Menu Items
+        </Text>
         <span className="action-item" onClick={() => actionClick("add")}>
           Add item
         </span>

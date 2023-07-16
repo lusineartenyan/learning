@@ -2,13 +2,14 @@ import React, { ChangeEvent, useState } from 'react'
 import InputText from "../components/form/InputText";
 import Text from "../components/ui/Text";
 import Button from "../components/form/Button";
+import'../../src/assets/scss/pages/settings.scss';
 
 
 const Settings = () => {
     const [name, setName] = useState('')
 
-    const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.target.value)
+    const handleNameChange = (name: string, value: string) => {
+        setName(value)
     }
 
     return (
