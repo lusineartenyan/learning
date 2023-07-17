@@ -22,7 +22,7 @@ const Form: React.FC<FormProps> = ({
 
   useEffect(() => {
     setFormData(details);
-  }, []);
+  }, [details]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
